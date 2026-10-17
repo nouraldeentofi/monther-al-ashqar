@@ -31,6 +31,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap">
 <style>
+/* Local fallbacks sized to the web fonts' widths: lines break the same before and after the
+   fonts arrive, so swapping them in moves nothing on the page. */
+@font-face{font-family:"MA Montserrat FB";font-weight:800 900;size-adjust:111.6%;ascent-override:86.7%;descent-override:22.5%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:700;size-adjust:109.4%;ascent-override:88.5%;descent-override:22.9%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:600;size-adjust:107.3%;ascent-override:90.2%;descent-override:23.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:100 599;size-adjust:115.0%;ascent-override:84.2%;descent-override:21.8%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:700 900;size-adjust:98.1%;ascent-override:104.5%;descent-override:28.0%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:600;size-adjust:96.7%;ascent-override:106.0%;descent-override:28.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:500;size-adjust:102.3%;ascent-override:100.2%;descent-override:26.9%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:100 499;size-adjust:100.2%;ascent-override:102.3%;descent-override:27.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:700 900;size-adjust:120.2%;ascent-override:90.7%;descent-override:34.9%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:600;size-adjust:124.3%;ascent-override:87.7%;descent-override:33.8%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:500;size-adjust:120.4%;ascent-override:90.5%;descent-override:34.9%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:100 499;size-adjust:118.3%;ascent-override:92.1%;descent-override:35.5%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:700 900;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:600;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:500;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:100 499;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Caps FB";font-weight:100 900;size-adjust:92.6%;ascent-override:110.7%;descent-override:29.7%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Mono FB";src:local("Courier New"),local("CourierNewPSMT"),local("Liberation Mono"),local("LiberationMono");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* Layout: a set of drawing sheets. Deep-teal sheets (hero, atlas, contact) carry his banner colours;
    pale survey-paper sheets carry the record. Every project is shown as a drawing title block. */
 :root{
@@ -38,14 +58,14 @@
   --aqua:#4EC2C0; --cyan:#6EF8F9; --ice:#AAFBFB; --white:#FFFFFF;
   --paper:#F1F6F5; --paper-2:#E4EFED; --ink:#0B1F2A; --ink-2:#3B555B; --line:#C8DCD9;
   --mist:#C6E4E2; --teal-950:#04343A; --rule-d:rgba(78,194,192,.32); --gold:#C9A45C; --ok:#5FD896;
-  --display:"Montserrat","IBM Plex Sans Arabic",system-ui,sans-serif;
-  --body:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono","IBM Plex Sans Arabic",ui-monospace,Menlo,monospace;
+  --display:"Montserrat","MA Montserrat FB","IBM Plex Sans Arabic","MA Plex Arabic FB",system-ui,sans-serif;
+  --body:"IBM Plex Sans","MA Plex FB","IBM Plex Sans Arabic","MA Plex Arabic FB",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono","MA Mono FB","IBM Plex Sans Arabic","MA Plex Arabic FB",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
 html[lang="ar"]{
-  --display:"IBM Plex Sans Arabic","Montserrat",system-ui,sans-serif;
-  --body:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif;
+  --display:"IBM Plex Sans Arabic","MA Plex Arabic FB","MA Plex FB","Montserrat",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","MA Plex Arabic FB","IBM Plex Sans","MA Plex FB",system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -71,8 +91,8 @@ html[lang="ar"] .lbl{letter-spacing:0;text-transform:none}
 .tag{font-size:1.02rem;font-weight:600;color:var(--teal-700)}
 .tag-h{font-size:1.05rem;font-weight:600;color:var(--teal-900)}
 .sec-head{display:grid;gap:1rem;max-width:48rem;margin-bottom:clamp(2.25rem,5vw,3.5rem)}
-h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;letter-spacing:-.018em;color:var(--teal-900)}
-.dark h2{color:var(--white)}
+h2,h1.h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;letter-spacing:-.018em;color:var(--teal-900)}
+.dark h2,.dark h1.h2{color:var(--white)}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{letter-spacing:0;font-weight:700;line-height:1.35}
 .sec-lead{font-size:1.25rem;color:var(--ink-2);max-width:42rem}
 .dark .sec-lead{color:var(--mist)}
@@ -405,7 +425,7 @@ html[dir="rtl"] .yr{transform:translate(50%,-50%)}
   background-size:auto,120px 120px,120px 120px}
 .c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
 @media (max-width:940px){.c-grid{grid-template-columns:minmax(0,1fr)}}
-.contact h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--white)}
+.contact h2,.contact h1.h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--white)}
 .contact .sec-lead{margin-top:1.25rem;color:var(--mist)}
 .ccard{border:1.5px solid rgba(78,194,192,.75);background:rgba(7,66,71,.85)}
 .crow{display:grid;gap:.2rem;padding:1rem 1.3rem;border-bottom:1px solid rgba(78,194,192,.22);min-width:0}
@@ -493,22 +513,22 @@ html[lang="ar"] .crow dt{letter-spacing:0}
 @keyframes march{to{stroke-dashoffset:-24}}
 
 /* hero load: one orchestrated sequence */
-.motion .hero .who,.motion .hero .post{animation:rise .6s ease-out both}
-.motion .hero .post{animation-delay:.08s}
-.motion .hero h1{animation:rise .75s .14s cubic-bezier(.2,.7,.2,1) both}
-.motion .dim span,.motion .dim .t,.motion .dim b{animation:fadein .5s .55s both}
-.motion .dim .ln{animation:extend .8s .6s cubic-bezier(.2,.7,.2,1) both}
+.intro .hero .who,.intro .hero .post{animation:rise .6s ease-out both}
+.intro .hero .post{animation-delay:.08s}
+.intro .hero h1{animation:rise .75s .14s cubic-bezier(.2,.7,.2,1) both}
+.intro .dim span,.intro .dim .t,.intro .dim b{animation:fadein .5s .55s both}
+.intro .dim .ln{animation:extend .8s .6s cubic-bezier(.2,.7,.2,1) both}
 .motion .dim .ln.l{transform-origin:right}.motion .dim .ln.r{transform-origin:left}
 .motion[dir="rtl"] .dim .ln.l{transform-origin:left}.motion[dir="rtl"] .dim .ln.r{transform-origin:right}
 .hl{background:linear-gradient(var(--cyan),var(--cyan)) no-repeat 0 0/100% 100%}
 .motion[dir="rtl"] .hl{background-position:100% 0}
-.motion .hero-lead{animation:rise .7s .4s ease-out both}
-.motion .hero-lead .hl{animation:sweep .6s 1.05s cubic-bezier(.4,0,.2,1) both}
-.motion .hero .actions{animation:rise .7s .5s ease-out both}
-.motion .tb{animation:fadein .6s .3s both}
-.motion .tb dl>div{animation:rise .5s both;animation-delay:calc(.45s + var(--i)*.07s)}
-.motion .plate span{animation:stamp .5s .5s cubic-bezier(.3,1.4,.5,1) both}
-.motion .fig{animation:rise .6s both;animation-delay:calc(.7s + var(--i)*.07s)}
+.intro .hero-lead{animation:rise .7s .4s ease-out both}
+.intro .hero-lead .hl{animation:sweep .6s 1.05s cubic-bezier(.4,0,.2,1) both}
+.intro .hero .actions{animation:rise .7s .5s ease-out both}
+.intro .tb{animation:fadein .35s both}
+.intro .tb dl>div{animation:rise .5s both;animation-delay:calc(.6s + var(--i)*.07s)}
+.intro .plate span{animation:stamp .5s .5s cubic-bezier(.3,1.4,.5,1) both}
+.intro .fig{animation:rise .6s both;animation-delay:calc(.7s + var(--i)*.07s)}
 
 /* header: reading progress drawn like a dimension line */
 .top{transition:box-shadow .25s}
@@ -744,7 +764,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   body{font-size:1.0625rem;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
   section{padding-block:2.75rem}
   .sec-head{margin-bottom:1.5rem;gap:.6rem}
-  h2{font-size:1.75rem}
+  h2,h1.h2{font-size:1.75rem}
   .sec-lead{font-size:1.05rem}
 
   /* app bar */
@@ -948,7 +968,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   .d-fig b{font-size:1.4rem}
 
   /* contact and footer */
-  .contact h2{font-size:2rem}
+  .contact h2,.contact h1.h2{font-size:2rem}
   .site-foot{padding-block:2.25rem 1.5rem}
   .sf-base{margin-top:1.75rem}
   .totop{display:none}
@@ -960,19 +980,190 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   @keyframes pagein-m-rtl{from{opacity:0;transform:translateX(-14px)}}
 }
 
+
+/* ---------- hero opening: blueprint to skyline ----------
+   The finished drawing is plain markup. Under .intro (first home view of the session)
+   or .bp.play (replay), it is drawn: sheet, tower, plan, then the actual S-curve with
+   the floors filling in step, the handover stamp, and the tower lights. */
+.bp{position:relative;--dir:1}
+[dir="rtl"] .bp{--dir:-1}
+.bp-art{position:relative;aspect-ratio:3/2;container-type:inline-size;overflow:hidden}
+.bp-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+[dir="rtl"] .bp-svg{transform:scaleX(-1)}
+.bp-frame rect,.bp-frame path{fill:none;stroke:rgba(110,248,249,.34);stroke-width:.8}
+.bp-frame rect,.bp-pmd{stroke-dasharray:1}
+.bp-d{fill:none;stroke:var(--cyan);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1}
+.bp-o{stroke-width:1.5}
+.bp-t{stroke-width:.55;stroke-opacity:.5}
+.bp-gnd .bp-d{stroke:var(--aqua);stroke-width:1.4}
+.bp-slabs path{fill:var(--cyan);opacity:.17}
+.bp-sweep{opacity:0}
+.bp-dim path,.bp-ld{fill:none;stroke:var(--gold);stroke-width:.85}
+.bp-ld{stroke-dasharray:2 2}
+.bp-lv path:not(.bp-ld){fill:var(--gold)}
+.bp-axes .bp-d{stroke:var(--aqua);stroke-width:1}
+.bp-tk{fill:none;stroke:var(--aqua);stroke-width:.8}
+.bp-100{fill:none;stroke:rgba(170,251,251,.38);stroke-width:.7;stroke-dasharray:3 3}
+.bp-plan{fill:none;stroke:var(--ice);stroke-opacity:.75;stroke-width:1.3;stroke-dasharray:4 3}
+.bp-act{fill:none;stroke:var(--cyan);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1}
+.bp-ring{fill:none;stroke:var(--cyan);stroke-width:1;opacity:.55}
+.bp-dot{fill:var(--cyan)}
+.bp-lamp{fill:#FF7A6B}
+.bp-halo{fill:none;stroke:#FF7A6B;stroke-width:.8;opacity:0}
+.bp-end circle,.bp-beacon circle,.bp-dim .bp-dl{transform-box:fill-box;transform-origin:center}
+.bp-dim .bp-dl{transform-origin:50% 100%}
+/* labels sit on the drawing in HTML so they stay crisp, bilingual and mirror with dir */
+.bp-l{position:absolute;top:var(--y);inset-inline-start:var(--x);font-family:var(--mono);font-size:11px;font-size:clamp(9.5px,3.1cqi,12.5px);font-weight:500;line-height:1.2;color:var(--ice);white-space:nowrap;letter-spacing:.06em;translate:0 -50%}
+.a-m{translate:calc(-50% * var(--dir)) -50%}
+.a-e{translate:calc(-100% * var(--dir)) -50%}
+.bp-vt{text-transform:uppercase;color:var(--mist);padding-bottom:.25em;border-bottom:1px solid rgba(170,251,251,.5)}
+.bp-dimt{color:var(--gold);translate:calc(-50% * var(--dir)) -50%;rotate:-90deg}
+.bp-yr{color:var(--gold)}
+.bp-pc{color:var(--cyan);font-weight:600}
+.bp-key{display:flex;align-items:center;gap:.45em;color:var(--mist)}
+.bp-key i{display:inline-block;width:1.5em;border-top:2px solid var(--cyan)}
+.bp-key i.k-p{border-top:1.5px dashed var(--ice)}
+.bp-key i.k-a{margin-inline-start:.6em}
+.bp-stamp{position:absolute;top:var(--y);inset-inline-start:var(--x);translate:calc(-50% * var(--dir)) -50%;rotate:calc(-7deg * var(--dir));display:grid;justify-items:center;text-align:center;gap:.3em;padding:.5em .7em .45em;border:2px solid var(--gold);border-radius:5px;box-shadow:inset 0 0 0 2.5px rgba(7,66,71,.85),inset 0 0 0 3.5px var(--gold);background:rgba(7,66,71,.62);color:var(--gold);font-family:var(--mono);font-size:12px;font-size:clamp(10.5px,3.4cqi,14.5px);font-weight:600;line-height:1.1;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.bp-stamp b{display:block;width:min-content;white-space:normal;font-weight:700;line-height:1.05}
+.bp-stamp small{font-size:.7em;font-weight:500;letter-spacing:.04em;padding-top:.3em;border-top:1px solid rgba(201,164,92,.6)}
+html[lang="ar"] .bp-l,html[lang="ar"] .bp-stamp b{letter-spacing:0}
+html[lang="ar"] .bp-stamp b{font-family:var(--body);font-size:1.12em;width:auto;white-space:nowrap}
+.bp-replay{position:absolute;inset-block-start:2px;inset-inline-start:2px;z-index:2;width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;background:none;color:var(--mist);cursor:pointer;border-radius:50%}
+.bp-replay span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid rgba(170,251,251,.4);background:rgba(4,52,58,.7);transition:background-color .18s,color .18s,border-color .18s,transform .3s}
+.bp-replay svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+[dir="rtl"] .bp-replay svg{transform:scaleX(-1)}
+.bp-replay:hover span{border-color:var(--cyan);color:var(--cyan)}
+.bp-replay:active span{transform:rotate(-120deg) scale(.92)}
+.bp-replay:focus-visible{outline-offset:-3px}
+
+@keyframes bp-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes bp-fade{from{opacity:0}}
+@keyframes bp-up{from{opacity:0;transform:translateY(5px)}}
+@keyframes bp-slab{0%{opacity:0}35%{opacity:.8}100%{opacity:.17}}
+@keyframes bp-ext{from{transform:scaleY(0)}}
+@keyframes bp-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes bp-ring{0%{opacity:0;transform:scale(.2)}45%{opacity:1}100%{opacity:.55;transform:scale(1)}}
+@keyframes bp-stamp{0%{opacity:0;transform:scale(1.7)}55%{opacity:1;transform:scale(.95)}78%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+@keyframes bp-sweep{0%{opacity:0;transform:translateY(150px)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateY(-150px)}}
+@keyframes bp-blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes bp-halo{0%{opacity:0;transform:scale(.4)}25%{opacity:.9}100%{opacity:0;transform:scale(1.7)}}
+
+/* ambient: the aviation light on the spire (paused off-screen and in hidden tabs) */
+.motion .bp-lamp{animation:bp-blink 2.6s ease-in-out infinite}
+.motion .bp-halo{animation:bp-halo 2.6s ease-out infinite}
+.bp.off .bp-beacon circle{animation-play-state:paused}
+
+/* the opening sequence */
+:is(.intro .bp,.motion .bp.play) .bp-grid{animation:bp-fade .7s .05s both}
+:is(.intro .bp,.motion .bp.play) .bp-frame rect{animation:bp-draw 1.1s cubic-bezier(.5,0,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-frame path{animation:bp-fade .5s .7s both}
+:is(.intro .bp,.motion .bp.play) .bp-gnd .bp-d{animation:bp-draw .6s .1s cubic-bezier(.4,0,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-gnd rect{animation:bp-fade .5s .5s both}
+:is(.intro .bp,.motion .bp.play) .bp-o{animation:bp-draw 1.2s .2s cubic-bezier(.35,.1,.25,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-tower .bp-d:not(.bp-o){animation:bp-draw .9s both;animation-delay:calc(.55s + var(--i) * .17s)}
+:is(.intro .bp,.motion .bp.play) .bp-dim path:not(.bp-dl){animation:bp-fade .4s .85s both}
+:is(.intro .bp,.motion .bp.play) .bp-dim .bp-dl{animation:bp-ext .7s .95s cubic-bezier(.2,.7,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-dimt{animation:bp-fade .45s 1.45s both}
+:is(.intro .bp,.motion .bp.play) .bp-lv0,:is(.intro .bp,.motion .bp.play) .bp-y0{animation:bp-fade .4s 1.15s both}
+:is(.intro .bp,.motion .bp.play) .bp-axes .bp-d{animation:bp-draw .5s .95s ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-tk,:is(.intro .bp,.motion .bp.play) .bp-100{animation:bp-fade .45s 1.25s both}
+:is(.intro .bp,.motion .bp.play) .bp-key{animation:bp-fade .45s 1.35s both}
+:is(.intro .bp,.motion .bp.play) .bp-vt{animation:bp-fade .5s 1.5s both}
+:is(.intro .bp,.motion .bp.play) .bp-pmd{animation:bp-draw 1s 1.25s cubic-bezier(.4,0,.3,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-act{animation:bp-draw 2.2s 1.8s linear both}
+:is(.intro .bp,.motion .bp.play) .bp-slabs path{animation:bp-slab .55s var(--d) ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-ring{animation:bp-ring .6s 3.95s ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-dot{animation:bp-pop .45s 3.95s cubic-bezier(.3,1.4,.5,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-pc{animation:bp-up .4s 4.05s both}
+:is(.intro .bp,.motion .bp.play) .bp-lv1,:is(.intro .bp,.motion .bp.play) .bp-y1{animation:bp-fade .45s 4.05s both}
+:is(.intro .bp,.motion .bp.play) .bp-stamp{animation:bp-stamp .6s 4.2s cubic-bezier(.3,.7,.3,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-sweep rect{animation:bp-sweep 1.1s 4.45s ease-in-out both}
+:is(.intro .bp,.motion .bp.play) .bp-sweep{opacity:1}
+:is(.intro .bp,.motion .bp.play) .bp-lamp{animation:bp-fade .3s 5s both,bp-blink 2.6s 5.3s ease-in-out infinite}
+:is(.intro .bp,.motion .bp.play) .bp-halo{animation:bp-halo 2.6s 5s ease-out infinite}
+
+/* hero layout: the drawing heads the title block on desktop, sits beside it on tablets,
+   and opens the page on phones, with the headline straight after it */
+.bp{border:1.5px solid rgba(78,194,192,.75);background:rgba(6,59,64,.9);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.bp-art{width:100%}
+@media (min-width:981px){
+  .hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);grid-template-rows:auto 1fr;row-gap:0}
+  .hero-grid>div:first-child{grid-column:1;grid-row:1/3}
+  .hero-grid>.bp{grid-column:2;grid-row:1;border-bottom:0;align-self:end}
+  .hero-grid>.tb{grid-column:2;grid-row:2;align-self:start}
+  .tb-head{grid-template-columns:6.5rem minmax(0,1fr)}
+  .plate span{font-size:2rem}
+  .tb-title{padding:.85rem 1.1rem}
+  .tb dl>div{grid-column:auto;padding:.7rem 1.1rem;border-bottom:1px solid rgba(78,194,192,.22);align-content:start}
+  .tb dl>div:nth-child(2){order:3}.tb dl>div:nth-child(3){order:2}.tb dl>div:nth-child(n+4){order:4}
+  .tb dl>div:nth-child(1),.tb dl>div:nth-child(2),.tb dl>div:nth-child(5){border-inline-end:1px solid rgba(78,194,192,.22)}
+  .tb dl>div.half+div.half{border-inline-start:0}
+  .tb dl>div:nth-last-child(-n+2){border-bottom:0}
+  .tb dd{font-size:.98rem}
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);column-gap:0;row-gap:clamp(2rem,4vw,2.75rem);align-items:stretch}
+  .hero-grid>div:first-child{grid-column:1/-1;grid-row:2}
+  .hero-grid>.bp{grid-column:1;grid-row:1;border-inline-end:0}
+  .hero-grid>.tb{grid-column:2;grid-row:1}
+  .tb-head{grid-template-columns:5rem minmax(0,1fr)}
+  .tb-title strong{font-size:1.15rem}
+  .tb-title .r{font-size:.92rem}
+  .tb .lbl{display:none}
+  .plate span{font-size:1.6rem}
+  .tb dl{display:none}
+  .tb-chips{display:flex;flex-wrap:wrap;align-content:flex-start;gap:.45rem;list-style:none;margin:0;padding:.9rem 1rem 1rem;border-top:1px solid rgba(78,194,192,.22)}
+  .tb-chips li{font-size:.85rem;font-weight:600;color:var(--ice);border:1px solid rgba(110,248,249,.35);background:rgba(110,248,249,.07);border-radius:999px;padding:.25rem .7rem}
+}
+@media (max-width:760px){
+  .hero-grid>.bp{order:-1;border-radius:12px;overflow:hidden}
+  .hero-grid>aside.tb{order:1;margin-top:.5rem}
+}
+
+/* the sequence resolves on the call to action */
+.hero{--dir:1}
+[dir="rtl"] .hero{--dir:-1}
+.hero .btn-primary{position:relative;overflow:hidden;isolation:isolate}
+.hero .btn-primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.intro .hero .btn-primary::after{animation:bp-shine .9s 4.65s ease-in-out both}
+@keyframes bp-shine{from{transform:translateX(calc(-120% * var(--dir)))}to{transform:translateX(calc(120% * var(--dir)))}}
+
+/* standards: readable labels on the dark sheet, one h1 per page, comfortable tap targets */
+.hero .lbl{color:var(--aqua)}
+.post{font-family:"IBM Plex Sans","MA Plex Caps FB",system-ui,sans-serif}
+h1.h2{margin-top:0}
+.mark{min-height:2.75rem;position:relative}
+.mark::before{content:"";position:absolute;inset:0 -5px}
+.link-more{display:inline-flex;align-items:center;min-height:2.75rem}
+.r-proj a{display:inline-flex;align-items:center;min-height:2.75rem}
+.plist a.nm{display:block;padding-block:.5rem;margin-block:-.5rem}
+.sf-links a{padding-block:.6rem}
+.totop{min-height:2.75rem}
+.lang{min-height:2.75rem}
+.crumb a{display:inline-block;padding-block:.6rem;margin-block:-.6rem}
+@media (min-width:981px){.nav a{padding-block:.65rem}}
+@media (max-width:760px){
+  .lang{min-height:2.75rem}
+  .back:not([hidden]){min-height:2.75rem}
+  .seg button{min-height:2.75rem}
+}
+@media (min-width:360px) and (max-width:760px){.tabbar a{font-size:.75rem}html[lang="ar"] .tabbar a{font-size:.78rem}}
+@media (max-width:760px){html[lang="ar"] .hero h1{font-size:2.2rem}}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 
 </head>
 <body>
-<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")}catch(e){}</script>
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)(function(d){d.classList.add("motion");var r=d.getAttribute("data-route")||location.hash.slice(1)||"home";if(/^(home|ar|en)$/.test(r)&&!sessionStorage.getItem("ma-intro")){d.classList.add("intro");sessionStorage.setItem("ma-intro","1")}})(document.documentElement)}catch(e){}</script>
 <svg class="art-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><pattern id="cw-t" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8M7.5,0V12" fill="none" stroke="rgba(14,104,109,.2)" stroke-width=".8"></path></pattern><pattern id="cw-a" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8M7.5,0V12" fill="none" stroke="rgba(78,194,192,.26)" stroke-width=".8"></path></pattern><pattern id="fl-t" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8" fill="none" stroke="rgba(14,104,109,.22)" stroke-width=".8"></path></pattern><pattern id="fl-a" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8" fill="none" stroke="rgba(78,194,192,.28)" stroke-width=".8"></path></pattern><pattern id="earth-t" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1,8L8,-1" fill="none" stroke="rgba(14,104,109,.2)" stroke-width=".8"></path></pattern><pattern id="earth-a" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1,8L8,-1" fill="none" stroke="rgba(78,194,192,.24)" stroke-width=".8"></path></pattern><pattern id="water-t" width="24" height="8" patternUnits="userSpaceOnUse"><path d="M2,4H12M14,8H20" fill="none" stroke="rgba(14,104,109,.24)" stroke-width=".8"></path></pattern><pattern id="water-a" width="24" height="8" patternUnits="userSpaceOnUse"><path d="M2,4H12M14,8H20" fill="none" stroke="rgba(78,194,192,.3)" stroke-width=".8"></path></pattern></defs></svg>
 <header class="top" style="">
   <div class="wrap">
     <a class="mark" href="../../../ar/"><i>MA</i><span data-i18n="name">منذر الأشقر</span></a>
     <a class="back" id="backBtn" href="../../../ar/projects/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg><span data-i18n="nav.projects">المشاريع</span></a>
     <span class="apptitle" id="appTitle" aria-hidden="true">مأخذ ومصب مياه البحر لمحطة التحلية (SWRO)، اللؤلؤة</span>
-    <nav class="nav" id="nav" aria-label="Sections">
+    <nav class="nav" id="nav" aria-label="الأقسام">
       <a href="../../../ar/" data-i18n="nav.home">الرئيسية</a>
       <a href="../../../ar/experience/" data-i18n="nav.exp">الخبرة</a>
       <a href="../../../ar/projects/" data-i18n="nav.projects" class="active" aria-current="page">المشاريع</a>
@@ -993,7 +1184,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
 <div class="page" data-page="project">
 <section class="has-art light" id="s-detail">
   <svg class="art" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><g class="farg"><path class="fo" d="M560,128V79H597V128M605,128V75H659V128M664,128V107H717V128M717,128V86H751V128M753,128V105H793V128M795,128V85H822V128M825,128V96H877V128M880,128V100H912V128M917,128V88H973V128M981,128V105H1030V128M1035,128V99H1076V128M1077,128V84H1127V128M1134,128V99H1173V128M1173,128V78H1225V128"></path></g><g class="gnd"><rect x="0" y="128" width="1200" height="112" fill="url(#earth-t)"></rect><path class="gl" d="M0,128H1200"></path></g><g class="mid"><path class="d b" pathLength="1" style="--i:0" d="M110,186A40,40 0 1 0 190,186A40,40 0 1 0 110,186Z"></path><path class="d" pathLength="1" style="--i:1" d="M116,186A34,34 0 1 0 184,186A34,34 0 1 0 116,186Z"></path><path class="d t" pathLength="1" style="--i:2" d="M183.3,192.8L189.2,193.9M168.8,214.3L172.1,219.3M143.2,219.3L142.1,225.2M121.7,204.8L116.7,208.1M116.7,179.2L110.8,178.1M131.2,157.7L127.9,152.7M156.8,152.7L157.9,146.8M178.3,167.2L183.3,163.9M124,206H176"></path><path class="d b" pathLength="1" style="--i:3" d="M330,128V180H532V128Z"></path><path class="d" pathLength="1" style="--i:4" d="M330,154H532M330,180H532"></path><path class="d t" pathLength="1" style="--i:5" d="M342,180V230M372,180V230M402,180V230M432,180V230M462,180V230M492,180V230M522,180V230"></path><path class="d b" pathLength="1" style="--i:6" d="M340,128V42H520V128Z"></path><path class="d t" pathLength="1" style="--i:7" d="M340,47H520"></path><path class="d" pathLength="1" style="--i:8" d="M379.6,42V34H440.8V42"></path><rect class="w" x="342" y="50" width="176" height="76" fill="url(#cw-t)"></rect><path class="d b" pathLength="1" style="--i:9" d="M600,62H1060V72H600Z"></path><path class="d t" pathLength="1" style="--i:10" d="M600,54H1060M600,62V54M612,62V54M624,62V54M636,62V54M648,62V54M660,62V54M672,62V54M684,62V54M696,62V54M708,62V54M720,62V54M732,62V54M744,62V54M756,62V54M768,62V54M780,62V54M792,62V54M804,62V54M816,62V54M828,62V54M840,62V54M852,62V54M864,62V54M876,62V54M888,62V54M900,62V54M912,62V54M924,62V54M936,62V54M948,62V54M960,62V54M972,62V54M984,62V54M996,62V54M1008,62V54M1020,62V54M1032,62V54M1044,62V54M1056,62V54"></path><path class="d b" pathLength="1" style="--i:11" d="M634,72L632,130H648L646,72Z"></path><path class="d b" pathLength="1" style="--i:12" d="M622,130H658V142H622Z"></path><path class="d t" pathLength="1" style="--i:13" d="M626,72H654V78H626Z"></path><path class="d b" pathLength="1" style="--i:14" d="M844,72L842,130H858L856,72Z"></path><path class="d b" pathLength="1" style="--i:15" d="M832,130H868V142H832Z"></path><path class="d t" pathLength="1" style="--i:16" d="M836,72H864V78H836Z"></path><path class="d b" pathLength="1" style="--i:17" d="M1034,72L1032,130H1048L1046,72Z"></path><path class="d b" pathLength="1" style="--i:18" d="M1022,130H1058V142H1022Z"></path><path class="d t" pathLength="1" style="--i:19" d="M1026,72H1054V78H1026Z"></path><path class="d t" pathLength="1" style="--i:20" d="M628,142V226M652,142V226M838,142V226M862,142V226M1028,142V226M1052,142V226"></path></g><g class="nl"></g><g class="anng"><text class="tx" x="150" y="140" text-anchor="middle">TBM Ø8.0 m</text><path class="an" d="M338,230H346M368,230H376M398,230H406M428,230H436M458,230H466M488,230H496M518,230H526"></path><path class="mk" d="M305.5,120H314.5L310,128Z"></path><path class="an" d="M258,128H320"></path><text class="tx" x="302" y="125" text-anchor="end">±0.00</text><path class="mk" d="M305.5,172H314.5L310,180Z"></path><path class="an" d="M258,180H320"></path><text class="tx" x="302" y="177" text-anchor="end">-8.50</text><path class="an" d="M634,46H856M640,52V40M850,52V40M637,49L643,43M847,49L853,43"></path><text class="tx" x="745" y="42" text-anchor="middle">60 000</text><path class="an" d="M844,46H1046M850,52V40M1040,52V40M847,49L853,43M1037,49L1043,43"></path><text class="tx" x="945" y="42" text-anchor="middle">55 000</text></g></svg>
-  <div class="wrap" id="detail"><nav class="crumb" aria-label="Breadcrumb"><a href="../../../ar/projects/">كل المشاريع</a></nav><div class="d-grid"><div class="d-main"><p class="tag">الاستشاري، دار الهندسة</p><h1 class="d-title">مأخذ ومصب مياه البحر لمحطة التحلية (SWRO)، اللؤلؤة</h1><p class="d-place">جزيرة اللؤلؤة</p><p class="d-ov">تركيب وتشغيل خطوط أنابيب الكلور والمأخذ والمصب البحرية لمحطة تحلية مياه البحر بالتناضح العكسي التي تزوّد جزيرة اللؤلؤة بمياه الشرب.</p><div class="d-figs" role="list" aria-label="أرقام رئيسية"><div class="d-fig" role="listitem"><b><span dir="ltr">35,000 m³</span></b><span>يومياً</span></div><div class="d-fig" role="listitem"><b><span dir="ltr">4.8 km</span></b><span>من الأنابيب</span></div></div><h2 class="d-h">نطاق العمل</h2><ul class="d-scope"><li>طاقة المحطة 35,000 م³ يومياً.</li><li>910 م من أنابيب HDPE على اليابسة.</li><li>3,925 م من الأنابيب البحرية بأقطار متعددة.</li><li>أنظمة الكلور والمأخذ والمصب حتى الاختبار والتشغيل.</li></ul></div><aside class="d-tb" aria-label="سجل المشروع"><dl><div><dt>القيمة</dt><dd class="val">73 مليون ر.ق</dd></div><div><dt>الدور</dt><dd>المهندس المقيم</dd></div><div><dt>الفترة</dt><dd>نوفمبر 2011 – مايو 2012</dd></div><div><dt>المدة</dt><dd>7 أشهر</dd></div><div><dt>جهة العمل</dt><dd>دار الهندسة</dd></div><div><dt>الموقع</dt><dd>جزيرة اللؤلؤة</dd></div></dl></aside></div><div class="d-nav"><a class="d-prev" href="../../../ar/projects/intercontinental-doha-car-park/"><small>المشروع السابق</small><b>فندق إنتركونتيننتال الدوحة، مواقف السيارات والبوابة الرئيسية</b></a><a class="d-next" href="../../../ar/projects/qatar-foundation-academy-al-wakra/"><small>المشروع التالي</small><b>أكاديمية مؤسسة قطر، الوكرة</b></a></div></div>
+  <div class="wrap" id="detail"><nav class="crumb" aria-label="مسار التنقل"><a href="../../../ar/projects/">كل المشاريع</a></nav><div class="d-grid"><div class="d-main"><p class="tag">الاستشاري، دار الهندسة</p><h1 class="d-title">مأخذ ومصب مياه البحر لمحطة التحلية (SWRO)، اللؤلؤة</h1><p class="d-place">جزيرة اللؤلؤة</p><p class="d-ov">تركيب وتشغيل خطوط أنابيب الكلور والمأخذ والمصب البحرية لمحطة تحلية مياه البحر بالتناضح العكسي التي تزوّد جزيرة اللؤلؤة بمياه الشرب.</p><div class="d-figs" role="list" aria-label="أرقام رئيسية"><div class="d-fig" role="listitem"><b><span dir="ltr">35,000 m³</span></b><span>يومياً</span></div><div class="d-fig" role="listitem"><b><span dir="ltr">4.8 km</span></b><span>من الأنابيب</span></div></div><h2 class="d-h">نطاق العمل</h2><ul class="d-scope"><li>طاقة المحطة 35,000 م³ يومياً.</li><li>910 م من أنابيب HDPE على اليابسة.</li><li>3,925 م من الأنابيب البحرية بأقطار متعددة.</li><li>أنظمة الكلور والمأخذ والمصب حتى الاختبار والتشغيل.</li></ul></div><aside class="d-tb" aria-label="سجل المشروع"><dl><div><dt>القيمة</dt><dd class="val">73 مليون ر.ق</dd></div><div><dt>الدور</dt><dd>المهندس المقيم</dd></div><div><dt>الفترة</dt><dd>نوفمبر 2011 – مايو 2012</dd></div><div><dt>المدة</dt><dd>7 أشهر</dd></div><div><dt>جهة العمل</dt><dd>دار الهندسة</dd></div><div><dt>الموقع</dt><dd>جزيرة اللؤلؤة</dd></div></dl></aside></div><div class="d-nav"><a class="d-prev" href="../../../ar/projects/intercontinental-doha-car-park/"><small>المشروع السابق</small><b>فندق إنتركونتيننتال الدوحة، مواقف السيارات والبوابة الرئيسية</b></a><a class="d-next" href="../../../ar/projects/qatar-foundation-academy-al-wakra/"><small>المشروع التالي</small><b>أكاديمية مؤسسة قطر، الوكرة</b></a></div></div>
 </section>
 </div>
 
@@ -1001,7 +1192,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
 
 </main>
 
-<nav class="tabbar" id="tabbar" aria-label="Sections">
+<nav class="tabbar" id="tabbar" aria-label="الأقسام">
   <a href="../../../ar/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z"></path></svg><span data-i18n="tab.home">الرئيسية</span></a>
   <a href="../../../ar/experience/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4z"></path><path d="M9 8V5.5h6V8M4 13h16"></path></svg><span data-i18n="tab.exp">الخبرة</span></a>
   <a href="../../../ar/projects/" class="active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9l7-4 7 4v11"></path><path d="M9 20v-6h6v6M3 20h18"></path></svg><span data-i18n="tab.proj">المشاريع</span></a>
@@ -1013,7 +1204,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   <div class="lb-back" data-close=""></div>
   <figure class="lb-fig">
     <button type="button" class="lb-x" data-close="" aria-label="إغلاق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
-    <img id="lbImg" alt="Monther Al-Ashqar">
+    <img id="lbImg" alt="منذر الأشقر">
     <figcaption><strong id="lbName" data-i18n="name">منذر الأشقر</strong><span data-i18n="tb.role">مدير مشاريع أول وممثل للمالك</span></figcaption>
   </figure>
 </div>
@@ -1026,7 +1217,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
         <p data-i18n="sf.blurb">مدير مشاريع أول وممثل للمالك في المشاريع الخليجية الكبرى. الدوحة، قطر.</p>
         <p class="sf-aka"><span data-i18n="sf.aka">يُكتب الاسم أيضاً</span> <span dir="ltr">Munther Al-Ashqar · Monther Alashqar · Monzer Al-Ashqar</span> · <span lang="ar" dir="rtl">منذر الأشقر · منذر الاشقر</span></p>
       </div>
-      <nav class="sf-col" aria-label="Footer">
+      <nav class="sf-col" aria-label="روابط التذييل">
         <p class="sf-h" data-i18n="sf.h1">الأقسام</p>
         <ul class="sf-links">
           <li><a href="../../../ar/" data-i18n="nav.home">الرئيسية</a></li>
@@ -1375,7 +1566,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var t=p[l], par=p.within?byKey(p.within):null, base=par?par.k:k;
     var idx=ORDER.indexOf(base), prev=ORDER[(idx-1+ORDER.length)%ORDER.length], next=ORDER[(idx+1)%ORDER.length];
     var subs=P.filter(function(x){return x.within===k;});
-    var h='<nav class="crumb" aria-label="Breadcrumb"><a href="'+link('projects')+'">'+L(UI2.all,l)+'</a>'+(par?'<span aria-hidden="true">/</span><a href="'+link('p-'+par.k)+'">'+esc(par[l].n)+'</a>':'')+'</nav>'+
+    var h='<nav class="crumb" aria-label="'+(l==="ar"?"مسار التنقل":"Breadcrumb")+'"><a href="'+link('projects')+'">'+L(UI2.all,l)+'</a>'+(par?'<span aria-hidden="true">/</span><a href="'+link('p-'+par.k)+'">'+esc(par[l].n)+'</a>':'')+'</nav>'+
       '<div class="d-grid"><div class="d-main"><p class="tag">'+esc(SIDE[p.side][l])+'</p><h1 class="d-title">'+esc(t.n)+'</h1><p class="d-place">'+esc(L(d.place,l))+'</p>'+
       '<p class="d-ov">'+esc(L(d.ov,l))+'</p>'+
       (d.fx.length?'<div class="d-figs" role="list" aria-label="'+L(UI2.figs,l)+'">'+d.fx.map(function(x){return '<div class="d-fig" role="listitem"><b><span dir="ltr">'+esc(x[0])+'</span></b><span>'+esc(l==="ar"?x[2]:x[1])+'</span></div>';}).join("")+'</div>':'')+
@@ -1488,6 +1679,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     "hero.status":"متاح لفرص جديدة","hero.region":"قطر · السعودية · الخليج",
     "hero.h1":"ثلاثون عاماً في الموقع.<br>أكثر من 5.8 مليار ر.ق مُسلَّمة.",
     "dim":"30 عاماً",
+    "bp.elev":"الواجهة","bp.curve":"منحنى الإنجاز","bp.plan":"المخطط","bp.act":"الفعلي","bp.stamp":"تم التسليم",
     "hero.lead":"مدير مشاريع أول وممثل للمالك في <span class=\"hl\">المشاريع الخليجية الكبرى</span>. انضباط الاستشاري، مُطبَّقاً على تنفيذ المقاول.",
     "hero.cta1":"تصفّح المشاريع","cta.li":"تواصل عبر LinkedIn","cta.mail":"أرسل بريداً إلكترونياً","cta.wa":"واتساب","cta.profile":"الملف على LinkedIn","cta.cv":"تحميل السيرة الذاتية",
     "tb.sheet":"السجل المهني","tb.role":"مدير مشاريع أول وممثل للمالك",
@@ -1657,7 +1849,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var mails=[].concat(CONFIG.email||[]).filter(Boolean), out="";
     function card(href,ext,icon,label,val,copyVal){
       return '<div class="cc"><a class="cc-main" href="'+esc(href)+'"'+(ext?' target="_blank" rel="noopener"':'')+'><span class="ico">'+ICO[icon]+'</span>'+
-        '<span class="t"><small>'+label+'</small><span class="v" dir="ltr">'+esc(val)+'</span></span></a>'+
+        '<span class="t"><small>'+label+'</small><span class="v" dir="ltr">'+esc(val).replace("@","@<wbr>")+'</span></span></a>'+
         '<button type="button" class="cc-copy" data-copy="'+esc(copyVal)+'" data-ok="'+UI.copied[l]+'" aria-label="'+UI.copy[l]+' '+esc(copyVal)+'">'+ICO.copy+ICO.ok+'</button></div>';
     }
     if(mails.length)out+=card("mailto:"+mails[0],false,"mail",UI.email[l],mails[0],mails[0]);
@@ -1699,6 +1891,11 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     b.setAttribute("aria-label", l==="ar"?"Switch to English":"التبديل إلى العربية");
     $("#burger").setAttribute("aria-label", l==="ar"?"القائمة":"Menu");
     if($("#plate"))$("#plate").setAttribute("aria-label", l==="ar"?"عرض الصورة":"View photo");
+    [["#nav","Sections","الأقسام"],["#tabbar","Sections","الأقسام"],[".sf-col","Footer","روابط التذييل"],[".hero .tb","Professional record","السجل المهني"],
+     [".tb-chips","Credentials","الاعتمادات"],["#filters","Filter projects","تصفية المشاريع"]].forEach(function(a){
+      document.querySelectorAll(a[0]).forEach(function(el){el.setAttribute("aria-label",l==="ar"?a[2]:a[1]);});});
+    $("#lbImg").alt=l==="ar"?"منذر الأشقر":"Monther Al-Ashqar";
+    var rb=$("#bpReplay"); if(rb){var rt=l==="ar"?"أعد رسم اللوحة":"Replay the drawing"; rb.setAttribute("aria-label",rt); rb.title=rt;}
     $("#lb .lb-x").setAttribute("aria-label", l==="ar"?"إغلاق":"Close");
     try{localStorage.setItem("ma-lang",l);}catch(e){}
   }
@@ -1734,7 +1931,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var img=new Image(); img.alt="Monther Al-Ashqar"; img.decoding="async";
     img.onload=function(){
       var mono=plate.querySelector("span"); if(mono)mono.remove();
-      plate.insertBefore(img,plate.firstChild); plate.classList.add("has-photo"); plate.disabled=false;
+      plate.insertBefore(img,plate.firstChild); plate.classList.add("has-photo"); plate.disabled=false; plate.removeAttribute("aria-hidden");
       $("#lbImg").src=photoSrc;
     };
     img.src=photoSrc;
@@ -1808,6 +2005,14 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
         ps.forEach(function(p,pi){ p.style.setProperty("--i", bi*(ps.length+1)+pi+(p.classList.contains("tw")?1.2:0)); });
       });
     });
+  }
+
+  var bp=$("#bp"), bpR=$("#bpReplay");
+  if(bp){
+    var bpOn=true, bpSet=function(){bp.classList.toggle("off",!bpOn||document.hidden);};
+    if("IntersectionObserver" in window)new IntersectionObserver(function(es){bpOn=es[es.length-1].isIntersecting;bpSet();}).observe(bp);
+    document.addEventListener("visibilitychange",bpSet);
+    if(motion&&bpR){bpR.hidden=false;bpR.addEventListener("click",function(){DOC.classList.remove("intro");bp.classList.remove("play");void bp.offsetWidth;bp.classList.add("play");});}
   }
 
   $("#totop").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});

@@ -421,7 +421,10 @@ def main():
     os.makedirs(OUT)
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch()
+        try:
+            browser = pw.chromium.launch()
+        except Exception:   # Playwright's own Chromium is not installed: use the system Chrome
+            browser = pw.chromium.launch(channel="chrome")
         ctx = browser.new_context(viewport={"width": 1366, "height": 900}, reduced_motion="reduce")
         ctx.route("**/*", lambda r: r.abort() if r.request.url.startswith("http") else r.continue_())
         pg = ctx.new_page()

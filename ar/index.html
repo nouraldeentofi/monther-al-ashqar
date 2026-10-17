@@ -31,6 +31,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap">
 <style>
+/* Local fallbacks sized to the web fonts' widths: lines break the same before and after the
+   fonts arrive, so swapping them in moves nothing on the page. */
+@font-face{font-family:"MA Montserrat FB";font-weight:800 900;size-adjust:111.6%;ascent-override:86.7%;descent-override:22.5%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:700;size-adjust:109.4%;ascent-override:88.5%;descent-override:22.9%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:600;size-adjust:107.3%;ascent-override:90.2%;descent-override:23.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Montserrat FB";font-weight:100 599;size-adjust:115.0%;ascent-override:84.2%;descent-override:21.8%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:700 900;size-adjust:98.1%;ascent-override:104.5%;descent-override:28.0%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:600;size-adjust:96.7%;ascent-override:106.0%;descent-override:28.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("LiberationSans-Bold"),local("Roboto Bold"),local("Roboto-Bold");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:500;size-adjust:102.3%;ascent-override:100.2%;descent-override:26.9%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex FB";font-weight:100 499;size-adjust:100.2%;ascent-override:102.3%;descent-override:27.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:700 900;size-adjust:120.2%;ascent-override:90.7%;descent-override:34.9%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:600;size-adjust:124.3%;ascent-override:87.7%;descent-override:33.8%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:500;size-adjust:120.4%;ascent-override:90.5%;descent-override:34.9%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:100 499;size-adjust:118.3%;ascent-override:92.1%;descent-override:35.5%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:700 900;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:600;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial Bold"),local("Arial-BoldMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:500;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Arabic FB";font-weight:100 499;size-adjust:84.95%;ascent-override:128.3%;descent-override:49.4%;line-gap-override:0%;src:local("Arial"),local("ArialMT");unicode-range:U+0020,U+00A0}
+@font-face{font-family:"MA Plex Caps FB";font-weight:100 900;size-adjust:92.6%;ascent-override:110.7%;descent-override:29.7%;line-gap-override:0%;src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("LiberationSans"),local("Roboto"),local("Roboto-Regular");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"MA Mono FB";src:local("Courier New"),local("CourierNewPSMT"),local("Liberation Mono"),local("LiberationMono");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 /* Layout: a set of drawing sheets. Deep-teal sheets (hero, atlas, contact) carry his banner colours;
    pale survey-paper sheets carry the record. Every project is shown as a drawing title block. */
 :root{
@@ -38,14 +58,14 @@
   --aqua:#4EC2C0; --cyan:#6EF8F9; --ice:#AAFBFB; --white:#FFFFFF;
   --paper:#F1F6F5; --paper-2:#E4EFED; --ink:#0B1F2A; --ink-2:#3B555B; --line:#C8DCD9;
   --mist:#C6E4E2; --teal-950:#04343A; --rule-d:rgba(78,194,192,.32); --gold:#C9A45C; --ok:#5FD896;
-  --display:"Montserrat","IBM Plex Sans Arabic",system-ui,sans-serif;
-  --body:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono","IBM Plex Sans Arabic",ui-monospace,Menlo,monospace;
+  --display:"Montserrat","MA Montserrat FB","IBM Plex Sans Arabic","MA Plex Arabic FB",system-ui,sans-serif;
+  --body:"IBM Plex Sans","MA Plex FB","IBM Plex Sans Arabic","MA Plex Arabic FB",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono","MA Mono FB","IBM Plex Sans Arabic","MA Plex Arabic FB",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
 html[lang="ar"]{
-  --display:"IBM Plex Sans Arabic","Montserrat",system-ui,sans-serif;
-  --body:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif;
+  --display:"IBM Plex Sans Arabic","MA Plex Arabic FB","MA Plex FB","Montserrat",system-ui,sans-serif;
+  --body:"IBM Plex Sans Arabic","MA Plex Arabic FB","IBM Plex Sans","MA Plex FB",system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -71,8 +91,8 @@ html[lang="ar"] .lbl{letter-spacing:0;text-transform:none}
 .tag{font-size:1.02rem;font-weight:600;color:var(--teal-700)}
 .tag-h{font-size:1.05rem;font-weight:600;color:var(--teal-900)}
 .sec-head{display:grid;gap:1rem;max-width:48rem;margin-bottom:clamp(2.25rem,5vw,3.5rem)}
-h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;letter-spacing:-.018em;color:var(--teal-900)}
-.dark h2{color:var(--white)}
+h2,h1.h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:800;letter-spacing:-.018em;color:var(--teal-900)}
+.dark h2,.dark h1.h2{color:var(--white)}
 html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3{letter-spacing:0;font-weight:700;line-height:1.35}
 .sec-lead{font-size:1.25rem;color:var(--ink-2);max-width:42rem}
 .dark .sec-lead{color:var(--mist)}
@@ -405,7 +425,7 @@ html[dir="rtl"] .yr{transform:translate(50%,-50%)}
   background-size:auto,120px 120px,120px 120px}
 .c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
 @media (max-width:940px){.c-grid{grid-template-columns:minmax(0,1fr)}}
-.contact h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--white)}
+.contact h2,.contact h1.h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--white)}
 .contact .sec-lead{margin-top:1.25rem;color:var(--mist)}
 .ccard{border:1.5px solid rgba(78,194,192,.75);background:rgba(7,66,71,.85)}
 .crow{display:grid;gap:.2rem;padding:1rem 1.3rem;border-bottom:1px solid rgba(78,194,192,.22);min-width:0}
@@ -493,22 +513,22 @@ html[lang="ar"] .crow dt{letter-spacing:0}
 @keyframes march{to{stroke-dashoffset:-24}}
 
 /* hero load: one orchestrated sequence */
-.motion .hero .who,.motion .hero .post{animation:rise .6s ease-out both}
-.motion .hero .post{animation-delay:.08s}
-.motion .hero h1{animation:rise .75s .14s cubic-bezier(.2,.7,.2,1) both}
-.motion .dim span,.motion .dim .t,.motion .dim b{animation:fadein .5s .55s both}
-.motion .dim .ln{animation:extend .8s .6s cubic-bezier(.2,.7,.2,1) both}
+.intro .hero .who,.intro .hero .post{animation:rise .6s ease-out both}
+.intro .hero .post{animation-delay:.08s}
+.intro .hero h1{animation:rise .75s .14s cubic-bezier(.2,.7,.2,1) both}
+.intro .dim span,.intro .dim .t,.intro .dim b{animation:fadein .5s .55s both}
+.intro .dim .ln{animation:extend .8s .6s cubic-bezier(.2,.7,.2,1) both}
 .motion .dim .ln.l{transform-origin:right}.motion .dim .ln.r{transform-origin:left}
 .motion[dir="rtl"] .dim .ln.l{transform-origin:left}.motion[dir="rtl"] .dim .ln.r{transform-origin:right}
 .hl{background:linear-gradient(var(--cyan),var(--cyan)) no-repeat 0 0/100% 100%}
 .motion[dir="rtl"] .hl{background-position:100% 0}
-.motion .hero-lead{animation:rise .7s .4s ease-out both}
-.motion .hero-lead .hl{animation:sweep .6s 1.05s cubic-bezier(.4,0,.2,1) both}
-.motion .hero .actions{animation:rise .7s .5s ease-out both}
-.motion .tb{animation:fadein .6s .3s both}
-.motion .tb dl>div{animation:rise .5s both;animation-delay:calc(.45s + var(--i)*.07s)}
-.motion .plate span{animation:stamp .5s .5s cubic-bezier(.3,1.4,.5,1) both}
-.motion .fig{animation:rise .6s both;animation-delay:calc(.7s + var(--i)*.07s)}
+.intro .hero-lead{animation:rise .7s .4s ease-out both}
+.intro .hero-lead .hl{animation:sweep .6s 1.05s cubic-bezier(.4,0,.2,1) both}
+.intro .hero .actions{animation:rise .7s .5s ease-out both}
+.intro .tb{animation:fadein .35s both}
+.intro .tb dl>div{animation:rise .5s both;animation-delay:calc(.6s + var(--i)*.07s)}
+.intro .plate span{animation:stamp .5s .5s cubic-bezier(.3,1.4,.5,1) both}
+.intro .fig{animation:rise .6s both;animation-delay:calc(.7s + var(--i)*.07s)}
 
 /* header: reading progress drawn like a dimension line */
 .top{transition:box-shadow .25s}
@@ -744,7 +764,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   body{font-size:1.0625rem;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
   section{padding-block:2.75rem}
   .sec-head{margin-bottom:1.5rem;gap:.6rem}
-  h2{font-size:1.75rem}
+  h2,h1.h2{font-size:1.75rem}
   .sec-lead{font-size:1.05rem}
 
   /* app bar */
@@ -948,7 +968,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   .d-fig b{font-size:1.4rem}
 
   /* contact and footer */
-  .contact h2{font-size:2rem}
+  .contact h2,.contact h1.h2{font-size:2rem}
   .site-foot{padding-block:2.25rem 1.5rem}
   .sf-base{margin-top:1.75rem}
   .totop{display:none}
@@ -960,19 +980,190 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   @keyframes pagein-m-rtl{from{opacity:0;transform:translateX(-14px)}}
 }
 
+
+/* ---------- hero opening: blueprint to skyline ----------
+   The finished drawing is plain markup. Under .intro (first home view of the session)
+   or .bp.play (replay), it is drawn: sheet, tower, plan, then the actual S-curve with
+   the floors filling in step, the handover stamp, and the tower lights. */
+.bp{position:relative;--dir:1}
+[dir="rtl"] .bp{--dir:-1}
+.bp-art{position:relative;aspect-ratio:3/2;container-type:inline-size;overflow:hidden}
+.bp-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+[dir="rtl"] .bp-svg{transform:scaleX(-1)}
+.bp-frame rect,.bp-frame path{fill:none;stroke:rgba(110,248,249,.34);stroke-width:.8}
+.bp-frame rect,.bp-pmd{stroke-dasharray:1}
+.bp-d{fill:none;stroke:var(--cyan);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1}
+.bp-o{stroke-width:1.5}
+.bp-t{stroke-width:.55;stroke-opacity:.5}
+.bp-gnd .bp-d{stroke:var(--aqua);stroke-width:1.4}
+.bp-slabs path{fill:var(--cyan);opacity:.17}
+.bp-sweep{opacity:0}
+.bp-dim path,.bp-ld{fill:none;stroke:var(--gold);stroke-width:.85}
+.bp-ld{stroke-dasharray:2 2}
+.bp-lv path:not(.bp-ld){fill:var(--gold)}
+.bp-axes .bp-d{stroke:var(--aqua);stroke-width:1}
+.bp-tk{fill:none;stroke:var(--aqua);stroke-width:.8}
+.bp-100{fill:none;stroke:rgba(170,251,251,.38);stroke-width:.7;stroke-dasharray:3 3}
+.bp-plan{fill:none;stroke:var(--ice);stroke-opacity:.75;stroke-width:1.3;stroke-dasharray:4 3}
+.bp-act{fill:none;stroke:var(--cyan);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1}
+.bp-ring{fill:none;stroke:var(--cyan);stroke-width:1;opacity:.55}
+.bp-dot{fill:var(--cyan)}
+.bp-lamp{fill:#FF7A6B}
+.bp-halo{fill:none;stroke:#FF7A6B;stroke-width:.8;opacity:0}
+.bp-end circle,.bp-beacon circle,.bp-dim .bp-dl{transform-box:fill-box;transform-origin:center}
+.bp-dim .bp-dl{transform-origin:50% 100%}
+/* labels sit on the drawing in HTML so they stay crisp, bilingual and mirror with dir */
+.bp-l{position:absolute;top:var(--y);inset-inline-start:var(--x);font-family:var(--mono);font-size:11px;font-size:clamp(9.5px,3.1cqi,12.5px);font-weight:500;line-height:1.2;color:var(--ice);white-space:nowrap;letter-spacing:.06em;translate:0 -50%}
+.a-m{translate:calc(-50% * var(--dir)) -50%}
+.a-e{translate:calc(-100% * var(--dir)) -50%}
+.bp-vt{text-transform:uppercase;color:var(--mist);padding-bottom:.25em;border-bottom:1px solid rgba(170,251,251,.5)}
+.bp-dimt{color:var(--gold);translate:calc(-50% * var(--dir)) -50%;rotate:-90deg}
+.bp-yr{color:var(--gold)}
+.bp-pc{color:var(--cyan);font-weight:600}
+.bp-key{display:flex;align-items:center;gap:.45em;color:var(--mist)}
+.bp-key i{display:inline-block;width:1.5em;border-top:2px solid var(--cyan)}
+.bp-key i.k-p{border-top:1.5px dashed var(--ice)}
+.bp-key i.k-a{margin-inline-start:.6em}
+.bp-stamp{position:absolute;top:var(--y);inset-inline-start:var(--x);translate:calc(-50% * var(--dir)) -50%;rotate:calc(-7deg * var(--dir));display:grid;justify-items:center;text-align:center;gap:.3em;padding:.5em .7em .45em;border:2px solid var(--gold);border-radius:5px;box-shadow:inset 0 0 0 2.5px rgba(7,66,71,.85),inset 0 0 0 3.5px var(--gold);background:rgba(7,66,71,.62);color:var(--gold);font-family:var(--mono);font-size:12px;font-size:clamp(10.5px,3.4cqi,14.5px);font-weight:600;line-height:1.1;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.bp-stamp b{display:block;width:min-content;white-space:normal;font-weight:700;line-height:1.05}
+.bp-stamp small{font-size:.7em;font-weight:500;letter-spacing:.04em;padding-top:.3em;border-top:1px solid rgba(201,164,92,.6)}
+html[lang="ar"] .bp-l,html[lang="ar"] .bp-stamp b{letter-spacing:0}
+html[lang="ar"] .bp-stamp b{font-family:var(--body);font-size:1.12em;width:auto;white-space:nowrap}
+.bp-replay{position:absolute;inset-block-start:2px;inset-inline-start:2px;z-index:2;width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;background:none;color:var(--mist);cursor:pointer;border-radius:50%}
+.bp-replay span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid rgba(170,251,251,.4);background:rgba(4,52,58,.7);transition:background-color .18s,color .18s,border-color .18s,transform .3s}
+.bp-replay svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+[dir="rtl"] .bp-replay svg{transform:scaleX(-1)}
+.bp-replay:hover span{border-color:var(--cyan);color:var(--cyan)}
+.bp-replay:active span{transform:rotate(-120deg) scale(.92)}
+.bp-replay:focus-visible{outline-offset:-3px}
+
+@keyframes bp-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes bp-fade{from{opacity:0}}
+@keyframes bp-up{from{opacity:0;transform:translateY(5px)}}
+@keyframes bp-slab{0%{opacity:0}35%{opacity:.8}100%{opacity:.17}}
+@keyframes bp-ext{from{transform:scaleY(0)}}
+@keyframes bp-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes bp-ring{0%{opacity:0;transform:scale(.2)}45%{opacity:1}100%{opacity:.55;transform:scale(1)}}
+@keyframes bp-stamp{0%{opacity:0;transform:scale(1.7)}55%{opacity:1;transform:scale(.95)}78%{transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+@keyframes bp-sweep{0%{opacity:0;transform:translateY(150px)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateY(-150px)}}
+@keyframes bp-blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes bp-halo{0%{opacity:0;transform:scale(.4)}25%{opacity:.9}100%{opacity:0;transform:scale(1.7)}}
+
+/* ambient: the aviation light on the spire (paused off-screen and in hidden tabs) */
+.motion .bp-lamp{animation:bp-blink 2.6s ease-in-out infinite}
+.motion .bp-halo{animation:bp-halo 2.6s ease-out infinite}
+.bp.off .bp-beacon circle{animation-play-state:paused}
+
+/* the opening sequence */
+:is(.intro .bp,.motion .bp.play) .bp-grid{animation:bp-fade .7s .05s both}
+:is(.intro .bp,.motion .bp.play) .bp-frame rect{animation:bp-draw 1.1s cubic-bezier(.5,0,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-frame path{animation:bp-fade .5s .7s both}
+:is(.intro .bp,.motion .bp.play) .bp-gnd .bp-d{animation:bp-draw .6s .1s cubic-bezier(.4,0,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-gnd rect{animation:bp-fade .5s .5s both}
+:is(.intro .bp,.motion .bp.play) .bp-o{animation:bp-draw 1.2s .2s cubic-bezier(.35,.1,.25,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-tower .bp-d:not(.bp-o){animation:bp-draw .9s both;animation-delay:calc(.55s + var(--i) * .17s)}
+:is(.intro .bp,.motion .bp.play) .bp-dim path:not(.bp-dl){animation:bp-fade .4s .85s both}
+:is(.intro .bp,.motion .bp.play) .bp-dim .bp-dl{animation:bp-ext .7s .95s cubic-bezier(.2,.7,.2,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-dimt{animation:bp-fade .45s 1.45s both}
+:is(.intro .bp,.motion .bp.play) .bp-lv0,:is(.intro .bp,.motion .bp.play) .bp-y0{animation:bp-fade .4s 1.15s both}
+:is(.intro .bp,.motion .bp.play) .bp-axes .bp-d{animation:bp-draw .5s .95s ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-tk,:is(.intro .bp,.motion .bp.play) .bp-100{animation:bp-fade .45s 1.25s both}
+:is(.intro .bp,.motion .bp.play) .bp-key{animation:bp-fade .45s 1.35s both}
+:is(.intro .bp,.motion .bp.play) .bp-vt{animation:bp-fade .5s 1.5s both}
+:is(.intro .bp,.motion .bp.play) .bp-pmd{animation:bp-draw 1s 1.25s cubic-bezier(.4,0,.3,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-act{animation:bp-draw 2.2s 1.8s linear both}
+:is(.intro .bp,.motion .bp.play) .bp-slabs path{animation:bp-slab .55s var(--d) ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-ring{animation:bp-ring .6s 3.95s ease-out both}
+:is(.intro .bp,.motion .bp.play) .bp-dot{animation:bp-pop .45s 3.95s cubic-bezier(.3,1.4,.5,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-pc{animation:bp-up .4s 4.05s both}
+:is(.intro .bp,.motion .bp.play) .bp-lv1,:is(.intro .bp,.motion .bp.play) .bp-y1{animation:bp-fade .45s 4.05s both}
+:is(.intro .bp,.motion .bp.play) .bp-stamp{animation:bp-stamp .6s 4.2s cubic-bezier(.3,.7,.3,1) both}
+:is(.intro .bp,.motion .bp.play) .bp-sweep rect{animation:bp-sweep 1.1s 4.45s ease-in-out both}
+:is(.intro .bp,.motion .bp.play) .bp-sweep{opacity:1}
+:is(.intro .bp,.motion .bp.play) .bp-lamp{animation:bp-fade .3s 5s both,bp-blink 2.6s 5.3s ease-in-out infinite}
+:is(.intro .bp,.motion .bp.play) .bp-halo{animation:bp-halo 2.6s 5s ease-out infinite}
+
+/* hero layout: the drawing heads the title block on desktop, sits beside it on tablets,
+   and opens the page on phones, with the headline straight after it */
+.bp{border:1.5px solid rgba(78,194,192,.75);background:rgba(6,59,64,.9);align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.bp-art{width:100%}
+@media (min-width:981px){
+  .hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);grid-template-rows:auto 1fr;row-gap:0}
+  .hero-grid>div:first-child{grid-column:1;grid-row:1/3}
+  .hero-grid>.bp{grid-column:2;grid-row:1;border-bottom:0;align-self:end}
+  .hero-grid>.tb{grid-column:2;grid-row:2;align-self:start}
+  .tb-head{grid-template-columns:6.5rem minmax(0,1fr)}
+  .plate span{font-size:2rem}
+  .tb-title{padding:.85rem 1.1rem}
+  .tb dl>div{grid-column:auto;padding:.7rem 1.1rem;border-bottom:1px solid rgba(78,194,192,.22);align-content:start}
+  .tb dl>div:nth-child(2){order:3}.tb dl>div:nth-child(3){order:2}.tb dl>div:nth-child(n+4){order:4}
+  .tb dl>div:nth-child(1),.tb dl>div:nth-child(2),.tb dl>div:nth-child(5){border-inline-end:1px solid rgba(78,194,192,.22)}
+  .tb dl>div.half+div.half{border-inline-start:0}
+  .tb dl>div:nth-last-child(-n+2){border-bottom:0}
+  .tb dd{font-size:.98rem}
+}
+@media (min-width:761px) and (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);column-gap:0;row-gap:clamp(2rem,4vw,2.75rem);align-items:stretch}
+  .hero-grid>div:first-child{grid-column:1/-1;grid-row:2}
+  .hero-grid>.bp{grid-column:1;grid-row:1;border-inline-end:0}
+  .hero-grid>.tb{grid-column:2;grid-row:1}
+  .tb-head{grid-template-columns:5rem minmax(0,1fr)}
+  .tb-title strong{font-size:1.15rem}
+  .tb-title .r{font-size:.92rem}
+  .tb .lbl{display:none}
+  .plate span{font-size:1.6rem}
+  .tb dl{display:none}
+  .tb-chips{display:flex;flex-wrap:wrap;align-content:flex-start;gap:.45rem;list-style:none;margin:0;padding:.9rem 1rem 1rem;border-top:1px solid rgba(78,194,192,.22)}
+  .tb-chips li{font-size:.85rem;font-weight:600;color:var(--ice);border:1px solid rgba(110,248,249,.35);background:rgba(110,248,249,.07);border-radius:999px;padding:.25rem .7rem}
+}
+@media (max-width:760px){
+  .hero-grid>.bp{order:-1;border-radius:12px;overflow:hidden}
+  .hero-grid>aside.tb{order:1;margin-top:.5rem}
+}
+
+/* the sequence resolves on the call to action */
+.hero{--dir:1}
+[dir="rtl"] .hero{--dir:-1}
+.hero .btn-primary{position:relative;overflow:hidden;isolation:isolate}
+.hero .btn-primary::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.6) 50%,transparent 70%);transform:translateX(-120%);pointer-events:none}
+.intro .hero .btn-primary::after{animation:bp-shine .9s 4.65s ease-in-out both}
+@keyframes bp-shine{from{transform:translateX(calc(-120% * var(--dir)))}to{transform:translateX(calc(120% * var(--dir)))}}
+
+/* standards: readable labels on the dark sheet, one h1 per page, comfortable tap targets */
+.hero .lbl{color:var(--aqua)}
+.post{font-family:"IBM Plex Sans","MA Plex Caps FB",system-ui,sans-serif}
+h1.h2{margin-top:0}
+.mark{min-height:2.75rem;position:relative}
+.mark::before{content:"";position:absolute;inset:0 -5px}
+.link-more{display:inline-flex;align-items:center;min-height:2.75rem}
+.r-proj a{display:inline-flex;align-items:center;min-height:2.75rem}
+.plist a.nm{display:block;padding-block:.5rem;margin-block:-.5rem}
+.sf-links a{padding-block:.6rem}
+.totop{min-height:2.75rem}
+.lang{min-height:2.75rem}
+.crumb a{display:inline-block;padding-block:.6rem;margin-block:-.6rem}
+@media (min-width:981px){.nav a{padding-block:.65rem}}
+@media (max-width:760px){
+  .lang{min-height:2.75rem}
+  .back:not([hidden]){min-height:2.75rem}
+  .seg button{min-height:2.75rem}
+}
+@media (min-width:360px) and (max-width:760px){.tabbar a{font-size:.75rem}html[lang="ar"] .tabbar a{font-size:.78rem}}
+@media (max-width:760px){html[lang="ar"] .hero h1{font-size:2.2rem}}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 
 </head>
 <body>
-<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion")}catch(e){}</script>
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)(function(d){d.classList.add("motion");var r=d.getAttribute("data-route")||location.hash.slice(1)||"home";if(/^(home|ar|en)$/.test(r)&&!sessionStorage.getItem("ma-intro")){d.classList.add("intro");sessionStorage.setItem("ma-intro","1")}})(document.documentElement)}catch(e){}</script>
 <svg class="art-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><pattern id="cw-t" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8M7.5,0V12" fill="none" stroke="rgba(14,104,109,.2)" stroke-width=".8"></path></pattern><pattern id="cw-a" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8M7.5,0V12" fill="none" stroke="rgba(78,194,192,.26)" stroke-width=".8"></path></pattern><pattern id="fl-t" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8" fill="none" stroke="rgba(14,104,109,.22)" stroke-width=".8"></path></pattern><pattern id="fl-a" width="8" height="12" patternUnits="userSpaceOnUse"><path d="M0,11.5H8" fill="none" stroke="rgba(78,194,192,.28)" stroke-width=".8"></path></pattern><pattern id="earth-t" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1,8L8,-1" fill="none" stroke="rgba(14,104,109,.2)" stroke-width=".8"></path></pattern><pattern id="earth-a" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M-1,8L8,-1" fill="none" stroke="rgba(78,194,192,.24)" stroke-width=".8"></path></pattern><pattern id="water-t" width="24" height="8" patternUnits="userSpaceOnUse"><path d="M2,4H12M14,8H20" fill="none" stroke="rgba(14,104,109,.24)" stroke-width=".8"></path></pattern><pattern id="water-a" width="24" height="8" patternUnits="userSpaceOnUse"><path d="M2,4H12M14,8H20" fill="none" stroke="rgba(78,194,192,.3)" stroke-width=".8"></path></pattern></defs></svg>
 <header class="top" style="">
   <div class="wrap">
     <a class="mark" href="../ar/"><i>MA</i><span data-i18n="name">منذر الأشقر</span></a>
     <a class="back" id="backBtn" href="../ar/projects/" hidden=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg><span data-i18n="nav.projects">المشاريع</span></a>
     <span class="apptitle" id="appTitle" aria-hidden="true">منذر الأشقر</span>
-    <nav class="nav" id="nav" aria-label="Sections">
+    <nav class="nav" id="nav" aria-label="الأقسام">
       <a href="../ar/" data-i18n="nav.home" class="active" aria-current="page">الرئيسية</a>
       <a href="../ar/experience/" data-i18n="nav.exp">الخبرة</a>
       <a href="../ar/projects/" data-i18n="nav.projects">المشاريع</a>
@@ -1004,16 +1195,18 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
         </div>
       </div>
 
-      <aside class="tb" aria-label="Professional record">
+      <div class="bp" id="bp"><div class="bp-art" aria-hidden="true"><svg class="bp-svg" viewBox="0 0 360 240" focusable="false"><defs><pattern id="bp-g" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10,0H0V10" fill="none" stroke="rgba(170,251,251,.09)" stroke-width=".5"></path></pattern><pattern id="bp-G" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50,0H0V50" fill="none" stroke="rgba(170,251,251,.13)" stroke-width=".6"></path></pattern><linearGradient id="bp-sweep" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#AAFBFB" stop-opacity="0"></stop><stop offset=".5" stop-color="#AAFBFB" stop-opacity=".55"></stop><stop offset="1" stop-color="#AAFBFB" stop-opacity="0"></stop></linearGradient><clipPath id="bp-tw"><path d="M54,198 L54,184.5 L68,184.5 L72,76.5 L77,76.5 L77,63 L107,63 L107,76.5 L112,76.5 L116,184.5 L130,184.5 L130,198Z"></path></clipPath><mask id="bp-pm" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="240"><path class="bp-pmd" pathLength="1" d="M184,198 L185.8,197.8 L187.6,197.7 L189.3,197.5 L191.1,197.3 L192.9,197.1 L194.7,196.8 L196.4,196.5 L198.2,196.2 L200,195.9 L201.8,195.5 L203.6,195.1 L205.3,194.7 L207.1,194.2 L208.9,193.7 L210.7,193.1 L212.4,192.4 L214.2,191.7 L216,191 L217.8,190.2 L219.6,189.2 L221.3,188.3 L223.1,187.2 L224.9,186 L226.7,184.8 L228.4,183.4 L230.2,181.9 L232,180.3 L233.8,178.6 L235.6,176.8 L237.3,174.9 L239.1,172.8 L240.9,170.6 L242.7,168.2 L244.4,165.8 L246.2,163.2 L248,160.5 L249.8,157.6 L251.6,154.7 L253.3,151.7 L255.1,148.5 L256.9,145.3 L258.7,142 L260.4,138.7 L262.2,135.4 L264,132 L265.8,128.6 L267.6,125.3 L269.3,122 L271.1,118.7 L272.9,115.5 L274.7,112.3 L276.4,109.3 L278.2,106.4 L280,103.5 L281.8,100.8 L283.6,98.2 L285.3,95.8 L287.1,93.4 L288.9,91.2 L290.7,89.1 L292.4,87.2 L294.2,85.4 L296,83.7 L297.8,82.1 L299.6,80.6 L301.3,79.2 L303.1,78 L304.9,76.8 L306.7,75.7 L308.4,74.8 L310.2,73.8 L312,73 L313.8,72.3 L315.6,71.6 L317.3,70.9 L319.1,70.3 L320.9,69.8 L322.7,69.3 L324.4,68.9 L326.2,68.5 L328,68.1 L329.8,67.8 L331.6,67.5 L333.3,67.2 L335.1,66.9 L336.9,66.7 L338.7,66.5 L340.4,66.3 L342.2,66.2 L344,66" fill="none" stroke="#fff" stroke-width="6"></path></mask></defs><g class="bp-grid"><rect x="6" y="6" width="348" height="228" fill="url(#bp-g)"></rect><rect x="6" y="6" width="348" height="228" fill="url(#bp-G)"></rect></g><g class="bp-frame"><rect x="6" y="6" width="348" height="228" pathLength="1"></rect><path d="M64,6v5M64,234v-5M122,6v5M122,234v-5M180,6v5M180,234v-5M238,6v5M238,234v-5M296,6v5M296,234v-5M6,63h5M354,63h-5M6,120h5M354,120h-5M6,177h5M354,177h-5"></path></g><g class="bp-gnd"><rect x="14" y="198" width="332" height="7" fill="url(#earth-a)"></rect><path class="bp-d" pathLength="1" d="M14,198H346"></path></g><g class="bp-slabs"><path style="--d:1.97s" d="M54,198L54,193.5H130L130,198Z"></path><path style="--d:2.11s" d="M54,193.5L54,189H130L130,193.5Z"></path><path style="--d:2.21s" d="M54,189L54,184.5H130L130,189Z"></path><path style="--d:2.31s" d="M68,184.5L68.2,180H115.8L116,184.5Z"></path><path style="--d:2.40s" d="M68.2,180L68.3,175.5H115.7L115.8,180Z"></path><path style="--d:2.47s" d="M68.3,175.5L68.5,171H115.5L115.7,175.5Z"></path><path style="--d:2.52s" d="M68.5,171L68.7,166.5H115.3L115.5,171Z"></path><path style="--d:2.57s" d="M68.7,166.5L68.8,162H115.2L115.3,166.5Z"></path><path style="--d:2.63s" d="M68.8,162L69,157.5H115L115.2,162Z"></path><path style="--d:2.69s" d="M69,157.5L69.2,153H114.8L115,157.5Z"></path><path style="--d:2.73s" d="M69.2,153L69.3,148.5H114.7L114.8,153Z"></path><path style="--d:2.80s" d="M69.3,148.5L69.5,144H114.5L114.7,148.5Z"></path><path style="--d:2.83s" d="M69.5,144L69.7,139.5H114.3L114.5,144Z"></path><path style="--d:2.87s" d="M69.7,139.5L69.8,135H114.2L114.3,139.5Z"></path><path style="--d:2.95s" d="M69.8,135L70,130.5H114L114.2,135Z"></path><path style="--d:3.00s" d="M70,130.5L70.2,126H113.8L114,130.5Z"></path><path style="--d:3.04s" d="M70.2,126L70.3,121.5H113.7L113.8,126Z"></path><path style="--d:3.08s" d="M70.3,121.5L70.5,117H113.5L113.7,121.5Z"></path><path style="--d:3.12s" d="M70.5,117L70.7,112.5H113.3L113.5,117Z"></path><path style="--d:3.17s" d="M70.7,112.5L70.8,108H113.2L113.3,112.5Z"></path><path style="--d:3.25s" d="M70.8,108L71,103.5H113L113.2,108Z"></path><path style="--d:3.29s" d="M71,103.5L71.2,99H112.8L113,103.5Z"></path><path style="--d:3.32s" d="M71.2,99L71.3,94.5H112.7L112.8,99Z"></path><path style="--d:3.36s" d="M71.3,94.5L71.5,90H112.5L112.7,94.5Z"></path><path style="--d:3.42s" d="M71.5,90L71.7,85.5H112.3L112.5,90Z"></path><path style="--d:3.48s" d="M71.7,85.5L71.8,81H112.2L112.3,85.5Z"></path><path style="--d:3.53s" d="M71.8,81L72,76.5H112L112.2,81Z"></path><path style="--d:3.60s" d="M77,76.5L77,72H107L107,76.5Z"></path><path style="--d:3.68s" d="M77,72L77,67.5H107L107,72Z"></path><path style="--d:3.88s" d="M77,67.5L77,63H107L107,67.5Z"></path></g><g class="bp-sweep" clip-path="url(#bp-tw)"><rect x="52" y="59" width="80" height="139" fill="url(#bp-sweep)"></rect></g><g class="bp-tower"><path class="bp-d bp-o" pathLength="1" d="M54,198 L54,184.5 L68,184.5 L72,76.5 L77,76.5 L77,63 L107,63 L107,76.5 L112,76.5 L116,184.5 L130,184.5 L130,198"></path><path class="bp-d bp-t" pathLength="1" style="--i:1" d="M54,193.5H130M54,189H130M68,184.5H116M68.2,180H115.8M68.3,175.5H115.7M68.5,171H115.5M68.7,166.5H115.3M68.8,162H115.2M69,157.5H115M69.2,153H114.8M69.3,148.5H114.7M69.5,144H114.5M69.7,139.5H114.3M69.8,135H114.2M70,130.5H114M70.2,126H113.8M70.3,121.5H113.7M70.5,117H113.5M70.7,112.5H113.3M70.8,108H113.2M71,103.5H113M71.2,99H112.8M71.3,94.5H112.7M71.5,90H112.5M71.7,85.5H112.3M71.8,81H112.2M77,76.5H107M77,72H107M77,67.5H107"></path><path class="bp-d bp-t" pathLength="1" style="--i:2" d="M76,184.5L78.7,76.5M84,184.5L85.3,76.5M92,184.5L92,76.5M100,184.5L98.7,76.5M108,184.5L105.3,76.5M63.5,198V184.5M73,198V184.5M82.5,198V184.5M92,198V184.5M101.5,198V184.5M111,198V184.5M120.5,198V184.5M84.5,76.5V63M92,76.5V63M99.5,76.5V63"></path><path class="bp-d" pathLength="1" style="--i:3" d="M81,63V52H103V63M81,57.5H103M92,52V26"></path></g><g class="bp-beacon"><circle class="bp-halo" cx="92" cy="25" r="6"></circle><circle class="bp-lamp" cx="92" cy="25" r="2.1"></circle></g><g class="bp-dim"><path d="M52,198H30M75,63H30"></path><path class="bp-dl" d="M34,198V160.5M34,100.5V63"></path><path d="M31,201L37,195M31,66L37,60"></path></g><g class="bp-lv bp-lv0"><path d="M136,191H144L140,198Z"></path></g><g class="bp-lv bp-lv1"><path class="bp-ld" d="M109,63H166"></path><path d="M136,56H144L140,63Z"></path></g><g class="bp-axes"><path class="bp-d" pathLength="1" d="M184,198V52"></path><path class="bp-tk" d="M204,198v3M224,198v3M244,198v3M264,198v3M284,198v3M304,198v3M324,198v3M344,198v3M184,165h-3M184,132h-3M184,99h-3"></path><path class="bp-100" d="M184,66H344"></path></g><path class="bp-plan" mask="url(#bp-pm)" d="M184,198 L185.8,197.8 L187.6,197.7 L189.3,197.5 L191.1,197.3 L192.9,197.1 L194.7,196.8 L196.4,196.5 L198.2,196.2 L200,195.9 L201.8,195.5 L203.6,195.1 L205.3,194.7 L207.1,194.2 L208.9,193.7 L210.7,193.1 L212.4,192.4 L214.2,191.7 L216,191 L217.8,190.2 L219.6,189.2 L221.3,188.3 L223.1,187.2 L224.9,186 L226.7,184.8 L228.4,183.4 L230.2,181.9 L232,180.3 L233.8,178.6 L235.6,176.8 L237.3,174.9 L239.1,172.8 L240.9,170.6 L242.7,168.2 L244.4,165.8 L246.2,163.2 L248,160.5 L249.8,157.6 L251.6,154.7 L253.3,151.7 L255.1,148.5 L256.9,145.3 L258.7,142 L260.4,138.7 L262.2,135.4 L264,132 L265.8,128.6 L267.6,125.3 L269.3,122 L271.1,118.7 L272.9,115.5 L274.7,112.3 L276.4,109.3 L278.2,106.4 L280,103.5 L281.8,100.8 L283.6,98.2 L285.3,95.8 L287.1,93.4 L288.9,91.2 L290.7,89.1 L292.4,87.2 L294.2,85.4 L296,83.7 L297.8,82.1 L299.6,80.6 L301.3,79.2 L303.1,78 L304.9,76.8 L306.7,75.7 L308.4,74.8 L310.2,73.8 L312,73 L313.8,72.3 L315.6,71.6 L317.3,70.9 L319.1,70.3 L320.9,69.8 L322.7,69.3 L324.4,68.9 L326.2,68.5 L328,68.1 L329.8,67.8 L331.6,67.5 L333.3,67.2 L335.1,66.9 L336.9,66.7 L338.7,66.5 L340.4,66.3 L342.2,66.2 L344,66"></path><path class="bp-act" pathLength="1" d="M184,198 L185.8,197.8 L187.6,197.7 L189.3,197.5 L191.1,197.3 L192.9,197.1 L194.7,196.8 L196.4,196.6 L198.2,196.3 L200,196 L201.8,195.7 L203.6,195.3 L205.3,195 L207.1,194.6 L208.9,194.2 L210.7,193.7 L212.4,193.3 L214.2,192.8 L216,192.3 L217.8,191.7 L219.6,191.1 L221.3,190.5 L223.1,189.9 L224.9,189.3 L226.7,188.6 L228.4,187.9 L230.2,187.1 L232,186.3 L233.8,185.5 L235.6,184.7 L237.3,183.8 L239.1,182.9 L240.9,181.9 L242.7,180.8 L244.4,179.8 L246.2,178.6 L248,177.4 L249.8,176.1 L251.6,174.8 L253.3,173.3 L255.1,171.8 L256.9,170.2 L258.7,168.4 L260.4,166.5 L262.2,164.6 L264,162.4 L265.8,160.2 L267.6,157.7 L269.3,155.2 L271.1,152.4 L272.9,149.5 L274.7,146.4 L276.4,143.2 L278.2,139.8 L280,136.3 L281.8,132.6 L283.6,128.9 L285.3,125 L287.1,121.1 L288.9,117.2 L290.7,113.3 L292.4,109.5 L294.2,105.7 L296,102.1 L297.8,98.6 L299.6,95.3 L301.3,92.1 L303.1,89.2 L304.9,86.5 L306.7,84 L308.4,81.8 L310.2,79.8 L312,77.9 L313.8,76.3 L315.6,74.9 L317.3,73.6 L319.1,72.5 L320.9,71.5 L322.7,70.6 L324.4,69.9 L326.2,69.2 L328,68.7 L329.8,68.2 L331.6,67.7 L333.3,67.4 L335.1,67.1 L336.9,66.8 L338.7,66.5 L340.4,66.3 L342.2,66.2 L344,66"></path><g class="bp-end"><circle class="bp-ring" cx="344" cy="66" r="7"></circle><circle class="bp-dot" cx="344" cy="66" r="3.4"></circle></g></svg><span class="bp-l bp-vt a-m" style="--x:25.56%;--y:89.17%" data-i18n="bp.elev">الواجهة</span><span class="bp-l bp-vt a-m" style="--x:73.33%;--y:89.17%" data-i18n="bp.curve">منحنى الإنجاز</span><span class="bp-l bp-dimt" style="--x:9.44%;--y:54.37%" data-i18n="dim">30 عاماً</span><span class="bp-l bp-yr bp-y0 a-s" style="--x:40.83%;--y:77.08%">1996</span><span class="bp-l bp-yr bp-y1 a-s" style="--x:40.83%;--y:20.83%">2025</span><span class="bp-l bp-pc a-e" style="--x:93.33%;--y:21.25%"><bdi>100%</bdi></span><span class="bp-l bp-key a-s" style="--x:52.78%;--y:12.50%"><i class="k-p"></i><span data-i18n="bp.plan">المخطط</span><i class="k-a"></i><span data-i18n="bp.act">الفعلي</span></span><span class="bp-stamp" style="--x:64.17%;--y:43.33%"><b data-i18n="bp.stamp">تم التسليم</b><small dir="ltr">1996 – 2025</small></span></div><button type="button" class="bp-replay" id="bpReplay" hidden="" aria-label="أعد رسم اللوحة" title="أعد رسم اللوحة"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"></path><path d="M4.5 4.5v4h4"></path></svg></span></button></div>
+
+      <aside class="tb" aria-label="السجل المهني">
         <div class="tb-head">
-          <button type="button" class="plate" id="plate" disabled="" aria-label="عرض الصورة"><span>MA</span><i class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="m15 15 5 5M10.5 8v5M8 10.5h5"></path></svg></i></button>
+          <button type="button" class="plate" id="plate" disabled="" aria-hidden="true" aria-label="عرض الصورة"><span>MA</span><i class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="m15 15 5 5M10.5 8v5M8 10.5h5"></path></svg></i></button>
           <div class="tb-title">
             <span class="lbl" data-i18n="tb.sheet">السجل المهني</span>
             <strong data-i18n="name">منذر الأشقر</strong>
             <span class="r" data-i18n="tb.role">مدير مشاريع أول وممثل للمالك</span>
           </div>
         </div>
-        <ul class="tb-chips" aria-label="Credentials">
+        <ul class="tb-chips" aria-label="الاعتمادات">
           <li>PMP®</li><li>PMI-RMP®</li><li>UPDA Grade A</li><li data-i18n="chip.sce">الهيئة السعودية للمهندسين</li><li data-i18n="chip.doha">الدوحة، قطر</li>
         </ul>
         <dl>
@@ -1080,7 +1273,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
 
 </main>
 
-<nav class="tabbar" id="tabbar" aria-label="Sections">
+<nav class="tabbar" id="tabbar" aria-label="الأقسام">
   <a href="../ar/" class="active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5.5h-5V20H4z"></path></svg><span data-i18n="tab.home">الرئيسية</span></a>
   <a href="../ar/experience/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4z"></path><path d="M9 8V5.5h6V8M4 13h16"></path></svg><span data-i18n="tab.exp">الخبرة</span></a>
   <a href="../ar/projects/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9l7-4 7 4v11"></path><path d="M9 20v-6h6v6M3 20h18"></path></svg><span data-i18n="tab.proj">المشاريع</span></a>
@@ -1092,7 +1285,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
   <div class="lb-back" data-close=""></div>
   <figure class="lb-fig">
     <button type="button" class="lb-x" data-close="" aria-label="إغلاق"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
-    <img id="lbImg" alt="Monther Al-Ashqar">
+    <img id="lbImg" alt="منذر الأشقر">
     <figcaption><strong id="lbName" data-i18n="name">منذر الأشقر</strong><span data-i18n="tb.role">مدير مشاريع أول وممثل للمالك</span></figcaption>
   </figure>
 </div>
@@ -1105,7 +1298,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
         <p data-i18n="sf.blurb">مدير مشاريع أول وممثل للمالك في المشاريع الخليجية الكبرى. الدوحة، قطر.</p>
         <p class="sf-aka"><span data-i18n="sf.aka">يُكتب الاسم أيضاً</span> <span dir="ltr">Munther Al-Ashqar · Monther Alashqar · Monzer Al-Ashqar</span> · <span lang="ar" dir="rtl">منذر الأشقر · منذر الاشقر</span></p>
       </div>
-      <nav class="sf-col" aria-label="Footer">
+      <nav class="sf-col" aria-label="روابط التذييل">
         <p class="sf-h" data-i18n="sf.h1">الأقسام</p>
         <ul class="sf-links">
           <li><a href="../ar/" data-i18n="nav.home" class="active" aria-current="page">الرئيسية</a></li>
@@ -1454,7 +1647,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var t=p[l], par=p.within?byKey(p.within):null, base=par?par.k:k;
     var idx=ORDER.indexOf(base), prev=ORDER[(idx-1+ORDER.length)%ORDER.length], next=ORDER[(idx+1)%ORDER.length];
     var subs=P.filter(function(x){return x.within===k;});
-    var h='<nav class="crumb" aria-label="Breadcrumb"><a href="'+link('projects')+'">'+L(UI2.all,l)+'</a>'+(par?'<span aria-hidden="true">/</span><a href="'+link('p-'+par.k)+'">'+esc(par[l].n)+'</a>':'')+'</nav>'+
+    var h='<nav class="crumb" aria-label="'+(l==="ar"?"مسار التنقل":"Breadcrumb")+'"><a href="'+link('projects')+'">'+L(UI2.all,l)+'</a>'+(par?'<span aria-hidden="true">/</span><a href="'+link('p-'+par.k)+'">'+esc(par[l].n)+'</a>':'')+'</nav>'+
       '<div class="d-grid"><div class="d-main"><p class="tag">'+esc(SIDE[p.side][l])+'</p><h1 class="d-title">'+esc(t.n)+'</h1><p class="d-place">'+esc(L(d.place,l))+'</p>'+
       '<p class="d-ov">'+esc(L(d.ov,l))+'</p>'+
       (d.fx.length?'<div class="d-figs" role="list" aria-label="'+L(UI2.figs,l)+'">'+d.fx.map(function(x){return '<div class="d-fig" role="listitem"><b><span dir="ltr">'+esc(x[0])+'</span></b><span>'+esc(l==="ar"?x[2]:x[1])+'</span></div>';}).join("")+'</div>':'')+
@@ -1567,6 +1760,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     "hero.status":"متاح لفرص جديدة","hero.region":"قطر · السعودية · الخليج",
     "hero.h1":"ثلاثون عاماً في الموقع.<br>أكثر من 5.8 مليار ر.ق مُسلَّمة.",
     "dim":"30 عاماً",
+    "bp.elev":"الواجهة","bp.curve":"منحنى الإنجاز","bp.plan":"المخطط","bp.act":"الفعلي","bp.stamp":"تم التسليم",
     "hero.lead":"مدير مشاريع أول وممثل للمالك في <span class=\"hl\">المشاريع الخليجية الكبرى</span>. انضباط الاستشاري، مُطبَّقاً على تنفيذ المقاول.",
     "hero.cta1":"تصفّح المشاريع","cta.li":"تواصل عبر LinkedIn","cta.mail":"أرسل بريداً إلكترونياً","cta.wa":"واتساب","cta.profile":"الملف على LinkedIn","cta.cv":"تحميل السيرة الذاتية",
     "tb.sheet":"السجل المهني","tb.role":"مدير مشاريع أول وممثل للمالك",
@@ -1736,7 +1930,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var mails=[].concat(CONFIG.email||[]).filter(Boolean), out="";
     function card(href,ext,icon,label,val,copyVal){
       return '<div class="cc"><a class="cc-main" href="'+esc(href)+'"'+(ext?' target="_blank" rel="noopener"':'')+'><span class="ico">'+ICO[icon]+'</span>'+
-        '<span class="t"><small>'+label+'</small><span class="v" dir="ltr">'+esc(val)+'</span></span></a>'+
+        '<span class="t"><small>'+label+'</small><span class="v" dir="ltr">'+esc(val).replace("@","@<wbr>")+'</span></span></a>'+
         '<button type="button" class="cc-copy" data-copy="'+esc(copyVal)+'" data-ok="'+UI.copied[l]+'" aria-label="'+UI.copy[l]+' '+esc(copyVal)+'">'+ICO.copy+ICO.ok+'</button></div>';
     }
     if(mails.length)out+=card("mailto:"+mails[0],false,"mail",UI.email[l],mails[0],mails[0]);
@@ -1778,6 +1972,11 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     b.setAttribute("aria-label", l==="ar"?"Switch to English":"التبديل إلى العربية");
     $("#burger").setAttribute("aria-label", l==="ar"?"القائمة":"Menu");
     if($("#plate"))$("#plate").setAttribute("aria-label", l==="ar"?"عرض الصورة":"View photo");
+    [["#nav","Sections","الأقسام"],["#tabbar","Sections","الأقسام"],[".sf-col","Footer","روابط التذييل"],[".hero .tb","Professional record","السجل المهني"],
+     [".tb-chips","Credentials","الاعتمادات"],["#filters","Filter projects","تصفية المشاريع"]].forEach(function(a){
+      document.querySelectorAll(a[0]).forEach(function(el){el.setAttribute("aria-label",l==="ar"?a[2]:a[1]);});});
+    $("#lbImg").alt=l==="ar"?"منذر الأشقر":"Monther Al-Ashqar";
+    var rb=$("#bpReplay"); if(rb){var rt=l==="ar"?"أعد رسم اللوحة":"Replay the drawing"; rb.setAttribute("aria-label",rt); rb.title=rt;}
     $("#lb .lb-x").setAttribute("aria-label", l==="ar"?"إغلاق":"Close");
     try{localStorage.setItem("ma-lang",l);}catch(e){}
   }
@@ -1813,7 +2012,7 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
     var img=new Image(); img.alt="Monther Al-Ashqar"; img.decoding="async";
     img.onload=function(){
       var mono=plate.querySelector("span"); if(mono)mono.remove();
-      plate.insertBefore(img,plate.firstChild); plate.classList.add("has-photo"); plate.disabled=false;
+      plate.insertBefore(img,plate.firstChild); plate.classList.add("has-photo"); plate.disabled=false; plate.removeAttribute("aria-hidden");
       $("#lbImg").src=photoSrc;
     };
     img.src=photoSrc;
@@ -1887,6 +2086,14 @@ html[lang="ar"] .d-tb dt{letter-spacing:0;text-transform:none;font-size:.88rem}
         ps.forEach(function(p,pi){ p.style.setProperty("--i", bi*(ps.length+1)+pi+(p.classList.contains("tw")?1.2:0)); });
       });
     });
+  }
+
+  var bp=$("#bp"), bpR=$("#bpReplay");
+  if(bp){
+    var bpOn=true, bpSet=function(){bp.classList.toggle("off",!bpOn||document.hidden);};
+    if("IntersectionObserver" in window)new IntersectionObserver(function(es){bpOn=es[es.length-1].isIntersecting;bpSet();}).observe(bp);
+    document.addEventListener("visibilitychange",bpSet);
+    if(motion&&bpR){bpR.hidden=false;bpR.addEventListener("click",function(){DOC.classList.remove("intro");bp.classList.remove("play");void bp.offsetWidth;bp.classList.add("play");});}
   }
 
   $("#totop").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
